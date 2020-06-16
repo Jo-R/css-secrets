@@ -20,6 +20,12 @@ body {
   margin: 1em;
 }
 
+.box-shadow-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .box-shadow-multi-border {
   background: paleturquoise;
   /**next line uses the spread radius and 0 offset and blur -> solid border and
@@ -29,8 +35,19 @@ body {
     0 2px 5px 15px rgba(0, 0, 0, 0.6);
   border-radius: 1%;
   width: 30%;
+  height: auto;
   padding: 2rem;
   margin: 2em;
+}
+
+.box-shadow-multi-border-2 {
+  border-radius: 50%;
+  background: #1c187a;
+  box-shadow: 0 0 0 10px #817dd1, 0 0 0 20px #5c58aa, 0 0 0 30px #3d3a84,
+    0 0 0 40px #211f56;
+  width: 10%;
+  padding: 2rem;
+  margin: 5em;
 }
 
 .outline-multi-border {
@@ -38,7 +55,7 @@ body {
   border: 10px solid #655;
   outline: 3px dashed deeppink;
   outline-offset: -15px; /**a negative offset moves it inside **/
-  border-radius: 1%; /**not outline doesn't respect border radius **/
+  border-radius: 2%; /**note outline doesn't respect border radius **/
   width: 30%;
   padding: 2rem;
   margin: 2em;
