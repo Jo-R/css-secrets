@@ -1,0 +1,45 @@
+body {
+  background: pink;
+}
+
+.bg-wrapper {
+  background: url(bgImg.jpeg) center / cover no-repeat;
+  width: 25%;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+}
+
+.translucent-border {
+  border: 10px solid hsla(0, 0%, 100%, 0.5);
+  border-radius: 2%;
+  background: white;
+  background-clip: padding-box; /**cos border box means background extends under border **/
+  width: 50%;
+  padding: 2rem;
+  margin: 1em;
+}
+
+.box-shadow-multi-border {
+  background: paleturquoise;
+  /**next line uses the spread radius and 0 offset and blur -> solid border and
+  can comma separate, just remeber they overlay so need to increase the spread, and
+  can add a real box shadow as well **/
+  box-shadow: 0 0 0 10px #655, 0 0 0 15px deeppink,
+    0 2px 5px 15px rgba(0, 0, 0, 0.6);
+  border-radius: 1%;
+  width: 30%;
+  padding: 2rem;
+  margin: 2em;
+}
+
+.outline-multi-border {
+  background: paleturquoise;
+  border: 10px solid #655;
+  outline: 3px dashed deeppink;
+  outline-offset: -15px; /**a negative offset moves it inside **/
+  border-radius: 1%; /**not outline doesn't respect border radius **/
+  width: 30%;
+  padding: 2rem;
+  margin: 2em;
+}
