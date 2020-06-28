@@ -60,3 +60,65 @@ body {
   padding: 2rem;
   margin: 2em;
 }
+
+.flexible-background-position {
+  height: 50vh;
+  padding: 10px; /** we want to respect the paddinng*/
+  /* background: url(nature.svg) no-repeat #58a;
+  background-position: right 10px bottom 10px; this is ok but if padding changes these change */
+  /** or content box...*/
+  /* background: url(nature.svg) no-repeat #58a bottom right; /**0r 100% 100% */
+  /* background-origin: content-box; *which respects that padding */
+  /** or using calc */
+  background: url(nature.svg) no-repeat #58a;
+  background-position: calc(100% - 20px) calc(100% - 10px);
+}
+
+.inner-rounding {
+  width: 50%;
+  margin: 2em;
+  /**Outline doesn't follow rounding but box shadow does. 
+  Overlay them and box-shadow coversthe gaps outline leaves on the corners */
+  background: lightblue;
+  border-radius: 0.9em;
+  padding: 1em;
+  box-shadow: 0 0 0 0.34em #655; /**pythagorus to work out the spread - or half the border radius will be enough */
+  outline: 0.6em solid #655;
+}
+
+.horizontal-stripes {
+  height: 10rem;
+  margin: 2em;
+  background: linear-gradient(
+    #fb3 30%,
+    #58a 0
+  ); /**the colour stops meet - adjust the % for different proportions, note second one is zero cos if
+  a colour stop has a position < any before it in list the same value is applied os this is same as setting x%
+  on both */
+  /** more than two colours... */
+  /* background: linear-gradient(#fb3 33.3%, #58a 0, #58a 66.6%, yellowgreen 0); */
+  background-size: 100% 2rem; /** and they are just a background so can apply a size*/
+}
+
+.vertical-stripes {
+  height: 10rem;
+  margin: 2em;
+  background: linear-gradient(to right, #fb3 50%, #58a 0);
+  background-size: 2rem 100%;
+}
+
+.diagonal-stripes {
+  height: 10rem;
+  margin: 2em;
+  /**so bear in mind its a tiled repeated background... so need 4 stripes per tile to work*/
+  background: linear-gradient(
+    45deg,
+    #fb3 25%,
+    #58a 0,
+    #58a 50%,
+    #fb3 0,
+    #fb3 75%,
+    #58a 0
+  );
+  background-size: 4rem 4rem; /**bigger number here or get thinner stripes because...maths! (pythagorus to be specific - lengths of sides of right triangles */
+}
