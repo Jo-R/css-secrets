@@ -122,3 +122,24 @@ body {
   );
   background-size: 4rem 4rem; /**bigger number here or get thinner stripes because...maths! (pythagorus to be specific - lengths of sides of right triangles */
 }
+
+/** more flexible! change the angle and no need for tiling or background size*/
+.better-diagonal-stripes {
+  height: 10rem;
+  margin: 2em;
+  background: repeating-linear-gradient(35deg, #fb3, #58a 2rem);
+  /** or solid stripes - see two stops per colour*/
+  /* background: repeating-linear-gradient(35deg, #fb3 0 15px, #58a 0 30px); */
+}
+
+.flexible-subtle-stripes {
+  height: 10rem;
+  margin: 2em;
+  /**Specify darker colour as bg and then strips of semi-trnasparent white so no need to work out what colour for lighter ones */
+  background: #58a;
+  background-image: repeating-linear-gradient(
+    30deg,
+    hsla(0, 0%, 100%, 0.1) 0 15px,
+    transparent 0 30px
+  );
+}
