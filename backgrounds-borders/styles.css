@@ -121,6 +121,7 @@ body {
     #58a 0
   );
   background-size: 4rem 4rem; /**bigger number here or get thinner stripes because...maths! (pythagorus to be specific - lengths of sides of right triangles */
+  /* background-repeat: no-repeat; */
 }
 
 /** more flexible! change the angle and no need for tiling or background size*/
@@ -142,4 +143,59 @@ body {
     hsla(0, 0%, 100%, 0.1) 0 15px,
     transparent 0 30px
   );
+}
+
+.gingham {
+  height: 10rem;
+  margin: 2em;
+  background: white;
+  background-image: linear-gradient(
+      90deg,
+      rgba(200, 0, 0, 0.5) 50%,
+      transparent 0
+    ),
+    linear-gradient(rgba(200, 0, 0, 0.5) 50%, transparent 0);
+  background-size: 2rem 2rem;
+  /* background-repeat: no-repeat; */
+}
+
+.basic-blueprint-grid {
+  height: 10rem;
+  margin: 2em;
+  background: #58a;
+  /** use 1px and the white lines stay that size no matter the cell size of the grid */
+  background-image: linear-gradient(white 1px, transparent 0),
+    linear-gradient(90deg, white 1px, transparent 0);
+  background-size: 4rem 2rem;
+  /* background-repeat: no-repeat; */
+}
+
+.better-blueprint-grid {
+  height: 10rem;
+  margin: 2em;
+  background: #58a;
+  background-image: linear-gradient(white 2px, transparent 0),
+    linear-gradient(90deg, white 2px, transparent 0),
+    linear-gradient(hsla(0, 0%, 100%, 0.3) 1px, transparent 0),
+    linear-gradient(90deg, hsla(0, 0%, 100%, 0.3) 1px, transparent 0);
+  background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
+  /* background-repeat: no-repeat; */
+}
+
+.tiled-dots {
+  height: 10rem;
+  margin: 2em;
+  background-color: #655;
+  background-image: radial-gradient(tan 30%, transparent 0);
+  background-size: 2rem 2rem;
+}
+
+.polka-dots {
+  height: 10rem;
+  margin: 2em;
+  background-color: #655;
+  background-image: radial-gradient(tan 30%, transparent 0),
+    radial-gradient(tan 30%, transparent 0);
+  background-size: 3rem 3rem;
+  background-position: 0 0, 1.5rem 1.5rem; /** second background position must be half the tile size*/
 }
