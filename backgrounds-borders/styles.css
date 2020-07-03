@@ -199,3 +199,58 @@ body {
   background-size: 3rem 3rem;
   background-position: 0 0, 1.5rem 1.5rem; /** second background position must be half the tile size*/
 }
+
+/**checkerboards are harder...can't create a tile of 4 squares (two of each colour) using linear
+gradients so we need to compose those squares from two right angle triangles and shift the position of 
+second gradient...the repeat that pattern shifted over again */
+.checkerboard {
+  height: 10rem;
+  margin: 2em;
+  background: #eee;
+  background-image: linear-gradient(45deg, #bbb 25%, transparent 0),
+    linear-gradient(45deg, transparent 75%, #bbb 0),
+    linear-gradient(45deg, #bbb 25%, transparent 0),
+    linear-gradient(45deg, transparent 75%, #bbb 0);
+  background-position: 0 0, 15px 15px, 15px 15px, 30px 30px;
+  background-size: 30px 30px;
+  /* background-repeat: no-repeat; */
+}
+
+/**Combines the opposite facng triangles (ie 1st with 2nd and 3rd with 4th) and makes the dark
+grey a semi-transparent balck so can change base colour without needing to adjust the top colour.
+Try switching in random colours to the gradient elements so can see how this works. */
+.slightly-dryer-checkerboard {
+  height: 10rem;
+  margin: 2em;
+  background: #eee;
+  background-image: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.25) 25%,
+      transparent 0,
+      transparent 75%,
+      rgba(0, 0, 0, 0.25) 0
+    ),
+    linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.25) 25%,
+      transparent 0,
+      transparent 75%,
+      rgba(0, 0, 0, 0.25) 0
+    );
+  background-position: 0 0, 15px 15px;
+  background-size: 30px 30px;
+  /* background-repeat: no-repeat; */
+}
+
+/**svg only need to change colour in one place and size with two edits */
+.even-better-svg-checkerboard {
+  height: 10rem;
+  margin: 2em;
+  background: #eee
+    url('data:image/svg+xml,\
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-opacity=".25" >\
+            <rect x="50" width="50" height="50" />\
+            <rect y="50" width="50" height="50" />\
+            </svg>');
+  background-size: 30px 30px;
+}
