@@ -2,9 +2,13 @@ body {
   background: pink;
 }
 
+.stack > * + * {
+  margin-top: 2rem;
+}
+
 .bg-wrapper {
   background: url(bgImg.jpeg) center / cover no-repeat;
-  width: 25%;
+  width: 50%;
   padding: 1rem;
   display: grid;
   place-items: center;
@@ -17,7 +21,6 @@ body {
   background-clip: padding-box; /**cos border box means background extends under border **/
   width: 50%;
   padding: 2rem;
-  margin: 1em;
 }
 
 .box-shadow-wrapper {
@@ -76,7 +79,6 @@ body {
 
 .inner-rounding {
   width: 50%;
-  margin: 2em;
   /**Outline doesn't follow rounding but box shadow does. 
   Overlay them and box-shadow coversthe gaps outline leaves on the corners */
   background: lightblue;
@@ -88,7 +90,6 @@ body {
 
 .horizontal-stripes {
   height: 10rem;
-  margin: 2em;
   background: linear-gradient(
     #fb3 30%,
     #58a 0
@@ -102,14 +103,12 @@ body {
 
 .vertical-stripes {
   height: 10rem;
-  margin: 2em;
   background: linear-gradient(to right, #fb3 50%, #58a 0);
   background-size: 2rem 100%;
 }
 
 .diagonal-stripes {
   height: 10rem;
-  margin: 2em;
   /**so bear in mind its a tiled repeated background... so need 4 stripes per tile to work*/
   background: linear-gradient(
     45deg,
@@ -127,7 +126,6 @@ body {
 /** more flexible! change the angle and no need for tiling or background size*/
 .better-diagonal-stripes {
   height: 10rem;
-  margin: 2em;
   background: repeating-linear-gradient(35deg, #fb3, #58a 2rem);
   /** or solid stripes - see two stops per colour*/
   /* background: repeating-linear-gradient(35deg, #fb3 0 15px, #58a 0 30px); */
@@ -135,7 +133,6 @@ body {
 
 .flexible-subtle-stripes {
   height: 10rem;
-  margin: 2em;
   /**Specify darker colour as bg and then strips of semi-trnasparent white so no need to work out what colour for lighter ones */
   background: #58a;
   background-image: repeating-linear-gradient(
@@ -147,7 +144,6 @@ body {
 
 .gingham {
   height: 10rem;
-  margin: 2em;
   background: white;
   background-image: linear-gradient(
       90deg,
@@ -161,7 +157,6 @@ body {
 
 .basic-blueprint-grid {
   height: 10rem;
-  margin: 2em;
   background: #58a;
   /** use 1px and the white lines stay that size no matter the cell size of the grid */
   background-image: linear-gradient(white 1px, transparent 0),
@@ -172,7 +167,6 @@ body {
 
 .better-blueprint-grid {
   height: 10rem;
-  margin: 2em;
   background: #58a;
   background-image: linear-gradient(white 2px, transparent 0),
     linear-gradient(90deg, white 2px, transparent 0),
@@ -184,7 +178,6 @@ body {
 
 .tiled-dots {
   height: 10rem;
-  margin: 2em;
   background-color: #655;
   background-image: radial-gradient(tan 30%, transparent 0);
   background-size: 2rem 2rem;
@@ -192,7 +185,6 @@ body {
 
 .polka-dots {
   height: 10rem;
-  margin: 2em;
   background-color: #655;
   background-image: radial-gradient(tan 30%, transparent 0),
     radial-gradient(tan 30%, transparent 0);
@@ -205,7 +197,6 @@ gradients so we need to compose those squares from two right angle triangles and
 second gradient...the repeat that pattern shifted over again */
 .checkerboard {
   height: 10rem;
-  margin: 2em;
   background: #eee;
   background-image: linear-gradient(45deg, #bbb 25%, transparent 0),
     linear-gradient(45deg, transparent 75%, #bbb 0),
@@ -221,7 +212,6 @@ grey a semi-transparent balck so can change base colour without needing to adjus
 Try switching in random colours to the gradient elements so can see how this works. */
 .slightly-dryer-checkerboard {
   height: 10rem;
-  margin: 2em;
   background: #eee;
   background-image: linear-gradient(
       45deg,
@@ -245,7 +235,6 @@ Try switching in random colours to the gradient elements so can see how this wor
 /**svg only need to change colour in one place and size with two edits */
 .even-better-svg-checkerboard {
   height: 10rem;
-  margin: 2em;
   background: #eee
     url('data:image/svg+xml,\
             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-opacity=".25" >\
